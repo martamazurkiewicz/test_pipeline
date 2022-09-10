@@ -19,9 +19,3 @@ jobs:
     vmImage: ubuntu-latest
   steps:
   - script: echo Hello, ${{ parameters.displayed_word }}!
-- job: run
-  displayName: run
-  pool: 
-    vmImage: ubuntu-latest
-  steps:
-  - script: echo "Hello, $(${{ parameters.displayed_word }}|tr '[:lower:]' '[:upper:]')!"

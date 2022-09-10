@@ -19,8 +19,8 @@ jobs:
 - job: build
   displayName: build
   steps:
-  - script: echo Hello, ${{ parameters.image }}!
+  - script: echo Hello, ${{ parameters.displayed_word }}!
 - job: run
   displayName: run
   steps:
-  - script: echo "Hello, $(${{ parameters.image }}|tr '[:lower:]' '[:upper:]')!"
+  - script: echo "Hello, $(${{ parameters.displayed_word }}|tr '[:lower:]' '[:upper:]')!"

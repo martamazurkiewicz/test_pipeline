@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+parameters:
+- name: displayed_word
+  displayName: Word that should be displayed
+  type: string
+  default: "world" 
+
+trigger:
+- none
+
+pool: 
+  vmImage: ubuntu-latest
+
+jobs:
+- job: build
+  displayName: build
+  steps:
+  - script: echo Hello, ${{ parameters.image }}!
+- job: run
+  displayName: run
+  steps:
+  - script: echo "Hello, $(${{ parameters.image }}|tr '[:lower:]' '[:upper:]')!"

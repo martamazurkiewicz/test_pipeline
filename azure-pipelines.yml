@@ -16,6 +16,6 @@ jobs:
 - job: build
   displayName: build
   pool: 
-    vmImage: Default
+    name: Default
   steps:
   - script: echo Hello, ${{ parameters.displayed_word }}!
